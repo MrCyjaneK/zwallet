@@ -14,11 +14,15 @@ XCFRAMEWORK_OUT="$OUTPUT_DIR/${FRAMEWORK_NAME}.xcframework"
 
 export BUILD_DIR="$BASE_DIR"
 
-mkdir -p "$HOME/.zcash-params"
-curl -L https://download.z.cash/downloads/sapling-output.params \
-  -o "$HOME/.zcash-params/sapling-output.params"
-curl -L https://download.z.cash/downloads/sapling-spend.params \
-  -o "$HOME/.zcash-params/sapling-spend.params"
+if [[ ! -f "$HOME/.zcash-params/sapling-output.params" ]];
+then
+    curl https://download.z.cash/downloads/sapling-output.params --output $HOME/.zcash-params/sapling-output.params
+fi
+
+if [[ ! -f "$HOME/.zcash-params/sapling-spend.params" ]];
+then
+    curl https://download.z.cash/downloads/sapling-spend.params --output $HOME/.zcash-params/sapling-spend.params
+fi
 
 mkdir -p assets
 cp "$HOME/.zcash-params/"* assets/
