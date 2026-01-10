@@ -4,7 +4,7 @@ cd "$(dirname "$0")/../.."
 
 FRAMEWORK_NAME="WarpApiFFI"
 LIB_NAME="libwarp_api_ffi.dylib"
-FEATURES="dart_ffi,sqlcipher"
+FEATURES="dart_ffi"
 
 BASE_DIR="$(pwd)"
 TARGET_DIR="$BASE_DIR/target"
