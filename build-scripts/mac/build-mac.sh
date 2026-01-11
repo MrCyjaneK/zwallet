@@ -74,6 +74,8 @@ create_framework_ios() {
   <string>FMWK</string>
   <key>CFBundleVersion</key>
   <string>1</string>
+  <key>MinimumOSVersion</key>
+  <string>12.1</string>
   <key>CFBundleShortVersionString</key>
   <string>1.0</string>
 </dict>
@@ -120,6 +122,8 @@ create_framework_macos_universal() {
   <string>FMWK</string>
   <key>CFBundleVersion</key>
   <string>1</string>
+  <key>MinimumOSVersion</key>
+  <string>12.1</string>
   <key>CFBundleShortVersionString</key>
   <string>1.0</string>
 </dict>
