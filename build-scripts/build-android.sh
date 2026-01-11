@@ -20,12 +20,12 @@ mv /tmp/out.toml native/zcash-sync/Cargo.toml
 
 ./configure.sh
 
-cargo ndk --target arm64-v8a build --release --features=dart_ffi
+cargo ndk --target arm64-v8a build --release --features=dart_ffi,sqlcipher
 mkdir -p ./packages/warp_api_ffi/android/src/main/jniLibs/arm64-v8a
 cp ./target/aarch64-linux-android/release/libwarp_api_ffi.so ./packages/warp_api_ffi/android/src/main/jniLibs/arm64-v8a/
-cargo ndk --target armeabi-v7a build --release --features=dart_ffi
+cargo ndk --target armeabi-v7a build --release --features=dart_ffi,sqlcipher
 mkdir -p ./packages/warp_api_ffi/android/src/main/jniLibs/armeabi-v7a
 cp ./target/armv7-linux-androideabi/release/libwarp_api_ffi.so ./packages/warp_api_ffi/android/src/main/jniLibs/armeabi-v7a/
-cargo ndk --target x86_64 build --release --features=dart_ffi
+cargo ndk --target x86_64 build --release --features=dart_ffi,sqlcipher
 mkdir -p ./packages/warp_api_ffi/android/src/main/jniLibs/x86_64
 cp ./target/x86_64-linux-android/release/libwarp_api_ffi.so ./packages/warp_api_ffi/android/src/main/jniLibs/x86_64/
